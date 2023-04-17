@@ -61,7 +61,7 @@ function Main() {
         phn,
         zip,
       };
-      const result = await axios.post( "https://five0fin-backend-api.onrender.com/newData", body);
+      const result = await axios.post( "http://localhost:8000/newData", body);
       if(result){
         dismissAll()
         toast.success('Success !', {
@@ -99,7 +99,7 @@ function Main() {
   };
 
   const getdata = async () => {
-    let result = await axios.get("https://five0fin-backend-api.onrender.com/getData");
+    let result = await axios.get("http://localhost:8000/getData");
     console.log(result.data.data);
     SetUser(result.data.data);
     setData(result.data.data)
